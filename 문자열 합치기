@@ -1,0 +1,23 @@
+package Practice;
+
+import java.util.Scanner;
+
+public class CombineString {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int countNumber = scanner.nextInt();
+		String totalText = "Hello ";
+		
+		for (int index = 1; index <= countNumber; index++) {
+			String text = "";
+			text = scanner.next();
+			if (index == countNumber) {
+				totalText += text + ".";
+			} else {
+				totalText += text + ",";
+			}
+		}
+		System.out.println(totalText);
+	}
+}
