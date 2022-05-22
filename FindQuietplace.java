@@ -1,11 +1,12 @@
-package Practice;
+package Paiza;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FindQuietplace {
 
-	public static void getCoordinate() {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
 		int constructionSiteX = scanner.nextInt(); // 공사현장의 x좌표
 		int constructionSiteY = scanner.nextInt(); // 공사현장의 y좌표
@@ -17,23 +18,16 @@ public class FindQuietplace {
 			int shadeX = scanner.nextInt(); // index번째 나무그늘의 x좌표
 			int shadeY = scanner.nextInt(); // index번째 나무그늘의 y좌표
 			int distance = (shadeX - constructionSiteX) ^ 2 + (shadeY - constructionSiteY) ^ 2;
-			String result = "";
-			
+
 			if (distance >= (noiseLevel ^ 2)) {
-				result = "silent";
+				resultList.add("silent");
 			} else {
-				result = "noisy";
+				resultList.add("noisy");
 			}
-			resultList.add(result);
 		}
-		
+
 		for (int index = 0; index < numberOfShades; index++) {
 			System.out.println(resultList.get(index));
 		}
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		getCoordinate();
 	}
 }
